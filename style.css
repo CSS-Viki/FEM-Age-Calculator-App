@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,300,400;1,800&display=swap");
+
+:root {
+  --Purple: hsl(259, 100%, 65%);
+  --Light-red: hsl(0, 100%, 67%);
+  --White: hsl(0, 0%, 100%);
+  --Off-white: hsl(0, 0%, 94%);
+  --Light-grey: hsl(0, 0%, 86%);
+  --Smokey-grey: hsl(0, 1%, 44%);
+  --Off-black: hsl(0, 0%, 8%);
+  --Font-size: 3rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--Light-grey);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  background-color: var(--White);
+  border-bottom-right-radius: 150px;
+  border-bottom-left-radius: 16px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
+  padding: 35px;
+  border-bottom: 1px solid var(--Light-grey);
+}
+.calendar__format {
+  display: flex;
+  gap: 20px;
+}
+.calendar__format label {
+  font-size: 1rem;
+  color: var(--Smokey-grey);
+  font-weight: 400;
+}
+
+.calendar__day,
+.calendar__month,
+.calendar__year {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.error {
+  color: var(--Light-red);
+  font-weight: 300;
+  font-size: 0.85rem;
+}
+
+.flex-items {
+  display: flex;
+}
+.flex-items .arrow__image {
+  position: absolute;
+  right: 0;
+  top: 155px;
+}
+.arrow__image {
+  background-image: url("/assets/images/icon-arrow.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 24px;
+  height: 24px;
+  background-color: var(--Purple);
+  border-radius: 50%;
+  padding: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s linear;
+}
+.arrow__image:hover {
+  background-color: var(--Off-black);
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+.input-box:focus {
+  border: 1px solid var(--Purple);
+}
+
+.input-box {
+  border: 1px solid var(--Light-grey);
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  font-weight: 800;
+  font-size: 32px;
+  outline: none;
+  transition: 0.5s;
+}
+.your__age {
+  border-top: 1px solid var(--Light-grey);
+  padding-block: 20px;
+  line-height: 1.1;
+}
+.your__age span {
+  font-size: var(--Font-size);
+  font-weight: 800;
+  color: var(--Purple);
+}
+.your__age .your__years,
+.your__age .your__months,
+.your__age .your__days {
+  font-weight: 800;
+  font-size: var(--Font-size);
+  font-style: italic;
+  /* transition: 0.3s ease-in; */
+}
+@media (max-width: 41.25em) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .flex-items .arrow__image {
+    left: 45%;
+    top: 155px;
+  }
+}
