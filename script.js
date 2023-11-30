@@ -71,7 +71,7 @@ inputMonths.addEventListener("input", () => {
 
 inputYears.addEventListener("input", () => {
   if (+inputYears.value > date.getFullYear()) {
-    errorYears.textContent = "Must be a valid month";
+    errorYears.textContent = "Must be in the past";
     errorYear.style.color = "hsl(0, 100%, 67%)";
     isValid = false;
     return;
